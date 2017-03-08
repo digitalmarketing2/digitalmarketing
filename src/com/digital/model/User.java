@@ -74,7 +74,7 @@ public class User {
 
 	public void setCountry(String country) {
 		Country = country;
-	}
+	} 
 
 	public String getState() {
 		return State;
