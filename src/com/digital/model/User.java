@@ -14,7 +14,7 @@ public int getId() {
 	public void setFirstName(String firstName) {
 		FirstName = firstName;
 	}
-	public String getLastName() {
+	public String getLastName() {       
 		return LastName;
 	}
 	public void setLastName(String lastName) {
