@@ -1,4 +1,4 @@
-package com.digital.admin;
+package com.digital.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
