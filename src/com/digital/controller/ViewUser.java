@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.digital.model.Plans;
 import com.digital.model.User;
-import com.digital.dao.UserDao;
 @WebServlet("/ViewUser")
 public class ViewUser extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,11 +29,12 @@ public class ViewUser extends HttpServlet {
 		out.println("<div class='container'>");
 		out.print("<h1>View Accountant</h1>");
 	
-		List<User> list=UserDao.getAllRecords();
+		List<User> list=UserDaoImpl.getAllUsers();
 		out.println("<table class='table table-bordered table-striped'>");
+		Plans p;
 		out.print("<tr><th>Id</th><th>Name</th><th>Email</th><th>Password</th><th>address</th><th>contact</th><th>Edit</th><th>Delete</th>");
-		for(AccountantBean bean:list){
-			out.print("<tr><td>"+bean.getId()+"</td><td>"+bean.getName()+"</td><td>"+bean.getEmail()+"</td><td>"+bean.getPassword()+"</td><td>"+bean.getAddress()+"</td><td>"+bean.getContact()+"</td><td><a href='EditAccountantForm?id="+bean.getId()+"'>Edit</a></td><td><a href='DeleteAccountant?id="+bean.getId()+"'>Delete</a></td></tr>");
+		for(User bean :list){
+			out.print("<tr><td>"+bean.getId()+"</td><td>"+p.getPlan_name()+"</td><td>"+bean.getEmail()+"</td><td>"+bean.getPassword()+"</td><td>"+bean.getAddress()+"</td><td>"+bean.getContact()+"</td><td><a href='EditAccountantForm?id="+bean.getId()+"'>Edit</a></td><td><a href='DeleteAccountant?id="+bean.getId()+"'>Delete</a></td></tr>");
 		}
 		out.println("</table>");
 			
